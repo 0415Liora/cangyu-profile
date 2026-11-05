@@ -273,9 +273,8 @@
   }
   .flat-stage .board:hover{opacity:1;animation-play-state:paused;}
   .flat-stage .board .spin{
-    position:absolute;left:50%;top:50%;width:140%;height:140%;
+    position:absolute;left:50%;top:50%;width:100%;height:100%;
     transform:translate(-50%,-50%);pointer-events:none;
-    animation:flakeSpin var(--dur,44s) linear infinite;
   }
   .flat-stage .board.b1 .spin{--dur:48s;}
   .flat-stage .board.b2 .spin{--dur:36s;animation-direction:reverse;}
@@ -355,7 +354,8 @@
     transition:transform .4s ease,box-shadow .4s ease;
   }
   .board:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
-  .board img{width:100%;height:100%;object-fit:cover;display:block;}
+  .board img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px;}
+  .flat-stage .board{overflow:hidden;box-shadow:0 8px 26px rgba(74,123,171,.14);}
   .board .ph{
     position:absolute;inset:0;display:flex;flex-direction:column;
     align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;
@@ -599,19 +599,19 @@
       <div data-page-node-id="2A5C2vS23crgXmY9nSIOXD" class="h-rule"></div>
       <div data-page-node-id="eXGsZ0IuN0jGCNCFsundCy" class="flat-stage">
         <div data-page-node-id="K11nPBGLGkV4Lc8Ia4qWBx" class="board b1">
-          <span data-page-node-id="2Q0tWIN1esF6rFZrQViJ5i" class="spin"><img data-page-node-id="KNWgPVrzEFFqdr5v8OYJr4" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/flake-1.jpg"></span>
+          <span data-page-node-id="2Q0tWIN1esF6rFZrQViJ5i" class="spin"><img data-page-node-id="KNWgPVrzEFFqdr5v8OYJr4" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/board-1.webp"></span>
           <div data-page-node-id="gS3vNBM1DRCcVzYew9NwPi" class="tag"><!--pnid:rAGh8xcf3levQW9F4fySzb-->话 术</div>
-          <div data-page-node-id="neL3Jt7q5PYkklGzsN6fAn" class="ph"><span data-page-node-id="CRH7bifizCLMwtzLuCxslM" class="bar"></span><span data-page-node-id="ngJlnEm5w9zFRxa30SHVjU" class="bar2"></span><div data-page-node-id="3a2OWouRxQdtLy9wQmrqpO" class="t"><!--pnid:6IYnydC6VSqszuGBsATZgN-->其 一</div><div data-page-node-id="AfMUTezJr0CYDkPn2EuwbX" class="d"><!--pnid:kPjxFaOk5CXBxAtyi2A1A2-->images/flake-1.jpg</div></div>
+          <div data-page-node-id="neL3Jt7q5PYkklGzsN6fAn" class="ph"><span data-page-node-id="CRH7bifizCLMwtzLuCxslM" class="bar"></span><span data-page-node-id="ngJlnEm5w9zFRxa30SHVjU" class="bar2"></span><div data-page-node-id="3a2OWouRxQdtLy9wQmrqpO" class="t"><!--pnid:6IYnydC6VSqszuGBsATZgN-->其 一</div><div data-page-node-id="AfMUTezJr0CYDkPn2EuwbX" class="d"><!--pnid:kPjxFaOk5CXBxAtyi2A1A2-->话 术 板</div></div>
         </div>
         <div data-page-node-id="j1hyVUw05RwEgJJIgouMV5" class="board b2">
-          <span data-page-node-id="XzFXdPIg81Y75Q1xubzhDL" class="spin"><img data-page-node-id="8bzDOfAXRyF7gHn4QtcqrH" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/flake-2.jpg"></span>
+          <span data-page-node-id="XzFXdPIg81Y75Q1xubzhDL" class="spin"><img data-page-node-id="8bzDOfAXRyF7gHn4QtcqrH" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/board-2.webp"></span>
           <div data-page-node-id="sVwFYywolrZ8wQ9CRgOoUS" class="tag"><!--pnid:REDd96hWGTdkoJjhrDxFrJ-->板 评</div>
-          <div data-page-node-id="24i90yWOY6bnKhGS9id1e4" class="ph"><span data-page-node-id="OiKAIredYSdZlYLb5mbdM1" class="bar"></span><span data-page-node-id="7iHwnpH4zhMxAdcH6EHqON" class="bar2"></span><div data-page-node-id="Z1bmBrVPv1xBDpZsLe6YW2" class="t"><!--pnid:9LO8ggO3kTZM3y2rfsgnwF-->其 二</div><div data-page-node-id="iLuCHpasacsYGwXZ31dTTu" class="d"><!--pnid:jhqyMHo3Y8cKXKGnBPKllI-->images/flake-2.jpg</div></div>
+          <div data-page-node-id="24i90yWOY6bnKhGS9id1e4" class="ph"><span data-page-node-id="OiKAIredYSdZlYLb5mbdM1" class="bar"></span><span data-page-node-id="7iHwnpH4zhMxAdcH6EHqON" class="bar2"></span><div data-page-node-id="Z1bmBrVPv1xBDpZsLe6YW2" class="t"><!--pnid:9LO8ggO3kTZM3y2rfsgnwF-->其 二</div><div data-page-node-id="iLuCHpasacsYGwXZ31dTTu" class="d"><!--pnid:jhqyMHo3Y8cKXKGnBPKllI-->板 评 板</div></div>
         </div>
         <div data-page-node-id="DQrZ7LGfe4fwx9GHnyrBPx" class="board b3">
-          <span data-page-node-id="DwZ79HCPVlZ5qa2gUspoQ1" class="spin"><img data-page-node-id="YZVjINYli9i7vzepBKRGRx" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/flake-3.jpg"></span>
+          <span data-page-node-id="DwZ79HCPVlZ5qa2gUspoQ1" class="spin"><img data-page-node-id="YZVjINYli9i7vzepBKRGRx" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/board-3.webp"></span>
           <div data-page-node-id="8x7LCd1u3zzIkL0TZmB3hm" class="tag"><!--pnid:Lm0ibVwITJpdomLA35zvg9-->卡 类</div>
-          <div data-page-node-id="cSgtqqTvS2Kg1FRkNhWk3R" class="ph"><span data-page-node-id="LRz3fNa6bmDeUxfx1MQUwQ" class="bar"></span><span data-page-node-id="D63PBf9CxYLok6IN0zD8oc" class="bar2"></span><div data-page-node-id="DglbBwba9Lb5L0gELuhcPp" class="t"><!--pnid:q58DvQxJXrSUAyJxisv4GD-->其 三</div><div data-page-node-id="a0yHcZhOwtT9AF0qvPfWyr" class="d"><!--pnid:mgaHUJjc1ZaodkTjv1sKPI-->images/flake-3.jpg</div></div>
+          <div data-page-node-id="cSgtqqTvS2Kg1FRkNhWk3R" class="ph"><span data-page-node-id="LRz3fNa6bmDeUxfx1MQUwQ" class="bar"></span><span data-page-node-id="D63PBf9CxYLok6IN0zD8oc" class="bar2"></span><div data-page-node-id="DglbBwba9Lb5L0gELuhcPp" class="t"><!--pnid:q58DvQxJXrSUAyJxisv4GD-->其 三</div><div data-page-node-id="a0yHcZhOwtT9AF0qvPfWyr" class="d"><!--pnid:mgaHUJjc1ZaodkTjv1sKPI-->卡 类 板</div></div>
         </div>
       </div>
     </div>
