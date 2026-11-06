@@ -259,7 +259,7 @@
     margin:8px auto 0;
   }
   .flat-stage .board{
-    position:absolute;width:31%;aspect-ratio:3/4;cursor:default;opacity:.94;
+    position:absolute;width:31%;aspect-ratio:3/4;cursor:pointer;opacity:.94;
     transform:rotate(var(--tilt,0deg));
     animation:cardSway var(--sway,16s) ease-in-out infinite alternate;
     transition:box-shadow .45s ease,opacity .45s ease;
@@ -290,6 +290,14 @@
     color:var(--ink);pointer-events:none;
     text-shadow:0 1px 7px var(--paper),0 0 3px var(--paper);
   }
+  /* 板卡点击跳转：透明覆盖整卡，不遮挡图片与标签 */
+  .flat-stage .board .board-link{
+    position:absolute;inset:0;z-index:4;display:block;
+    text-decoration:none;border-radius:2px;
+    transition:box-shadow .3s ease;
+  }
+  .flat-stage .board .board-link:hover{box-shadow:inset 0 0 0 2px rgba(74,123,171,.55);}
+  .flat-stage .board .board-link:focus-visible{outline:2px solid var(--ink);outline-offset:-4px;}
   /* ---- 板卡：常驻常显于页面底部（无方框，飞鸟在左） ---- */
   .ever{
     position:absolute;left:0;right:0;bottom:54px;z-index:12;
@@ -600,16 +608,19 @@
       <div data-page-node-id="eXGsZ0IuN0jGCNCFsundCy" class="flat-stage">
         <div data-page-node-id="K11nPBGLGkV4Lc8Ia4qWBx" class="board b1">
           <span data-page-node-id="2Q0tWIN1esF6rFZrQViJ5i" class="spin"><img data-page-node-id="KNWgPVrzEFFqdr5v8OYJr4" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/board-1.webp"></span>
+          <a data-page-node-id="hLHZifZQjANonO7zgcUc1G9c" class="board-link" href="https://kdocs.cn/l/cfP0xFcn1N8m" target="_blank" rel="noopener noreferrer" aria-label="打开话术文档" title="话术"></a>
           <div data-page-node-id="gS3vNBM1DRCcVzYew9NwPi" class="tag"><!--pnid:rAGh8xcf3levQW9F4fySzb-->话 术</div>
           <div data-page-node-id="neL3Jt7q5PYkklGzsN6fAn" class="ph"><span data-page-node-id="CRH7bifizCLMwtzLuCxslM" class="bar"></span><span data-page-node-id="ngJlnEm5w9zFRxa30SHVjU" class="bar2"></span><div data-page-node-id="3a2OWouRxQdtLy9wQmrqpO" class="t"><!--pnid:6IYnydC6VSqszuGBsATZgN-->其 一</div><div data-page-node-id="AfMUTezJr0CYDkPn2EuwbX" class="d"><!--pnid:kPjxFaOk5CXBxAtyi2A1A2-->话 术 板</div></div>
         </div>
         <div data-page-node-id="j1hyVUw05RwEgJJIgouMV5" class="board b2">
           <span data-page-node-id="XzFXdPIg81Y75Q1xubzhDL" class="spin"><img data-page-node-id="8bzDOfAXRyF7gHn4QtcqrH" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/board-2.webp"></span>
+          <a data-page-node-id="VVlI0cGsuM6T2uPKEdKcLMhK" class="board-link" href="https://kdocs.cn/l/csOFIY7woBrt" target="_blank" rel="noopener noreferrer" aria-label="打开板评文档" title="板评"></a>
           <div data-page-node-id="sVwFYywolrZ8wQ9CRgOoUS" class="tag"><!--pnid:REDd96hWGTdkoJjhrDxFrJ-->板 评</div>
           <div data-page-node-id="24i90yWOY6bnKhGS9id1e4" class="ph"><span data-page-node-id="OiKAIredYSdZlYLb5mbdM1" class="bar"></span><span data-page-node-id="7iHwnpH4zhMxAdcH6EHqON" class="bar2"></span><div data-page-node-id="Z1bmBrVPv1xBDpZsLe6YW2" class="t"><!--pnid:9LO8ggO3kTZM3y2rfsgnwF-->其 二</div><div data-page-node-id="iLuCHpasacsYGwXZ31dTTu" class="d"><!--pnid:jhqyMHo3Y8cKXKGnBPKllI-->板 评 板</div></div>
         </div>
         <div data-page-node-id="DQrZ7LGfe4fwx9GHnyrBPx" class="board b3">
           <span data-page-node-id="DwZ79HCPVlZ5qa2gUspoQ1" class="spin"><img data-page-node-id="YZVjINYli9i7vzepBKRGRx" alt onerror="this.remove()" onload="this.closest('.board').classList.add('loaded')" src="images/board-3.webp"></span>
+          <a data-page-node-id="jaaIRTAN8COnChur3X6FkByB" class="board-link" href="https://www.kdocs.cn/l/ckgynnXB7fCj" target="_blank" rel="noopener noreferrer" aria-label="打开冠卡文档" title="冠卡"></a>
           <div data-page-node-id="8x7LCd1u3zzIkL0TZmB3hm" class="tag"><!--pnid:Lm0ibVwITJpdomLA35zvg9-->卡 类</div>
           <div data-page-node-id="cSgtqqTvS2Kg1FRkNhWk3R" class="ph"><span data-page-node-id="LRz3fNa6bmDeUxfx1MQUwQ" class="bar"></span><span data-page-node-id="D63PBf9CxYLok6IN0zD8oc" class="bar2"></span><div data-page-node-id="DglbBwba9Lb5L0gELuhcPp" class="t"><!--pnid:q58DvQxJXrSUAyJxisv4GD-->其 三</div><div data-page-node-id="a0yHcZhOwtT9AF0qvPfWyr" class="d"><!--pnid:mgaHUJjc1ZaodkTjv1sKPI-->卡 类 板</div></div>
         </div>
