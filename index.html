@@ -458,7 +458,7 @@
   </button>
 </div>
 
-<audio data-page-node-id="w4vDkoYJv6FE8y8QwTgq7y" id="bgm" loop preload="auto" src="music.mp3"></audio>
+<audio data-page-node-id="w4vDkoYJv6FE8y8QwTgq7y" id="bgm" muted autoplay loop preload="auto" src="music.mp3"></audio>
 
 <main data-page-node-id="T1fZHacYrwFwIPpD2x5r9Q">
 
@@ -752,21 +752,75 @@
 
   show(0);
 
-  /* ---------------- 音乐（右上） ---------------- */
+  /* ---------------- 音乐（右上）：进入页面即自动播放 ---------------- */
   var musicBtn = document.getElementById("musicBtn");
   var bgm = document.getElementById("bgm");
   bgm.volume = 0.55;
+
+  function syncMusicBtn() {
+    if (bgm.paused) musicBtn.classList.remove("on");
+    else musicBtn.classList.add("on");
+  }
+  bgm.addEventListener("play", syncMusicBtn);
+  bgm.addEventListener("pause", syncMusicBtn);
+  syncMusicBtn();
+
+  var unlockEvents = ["pointerdown", "touchstart", "mousedown", "keydown"];
+  var armed = false;
+  var userPaused = false;
+
+  function disarmUnlock() {
+    if (!armed) return;
+    armed = false;
+    unlockEvents.forEach(function (t) { document.removeEventListener(t, unlockMusic, true); });
+  }
+  function unlockMusic(e) {
+    if (e && e.target && musicBtn.contains(e.target)) return;
+    if (userPaused) { disarmUnlock(); return; }
+    bgm.muted = false;
+    if (bgm.paused) {
+      var p = bgm.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    syncMusicBtn();
+    disarmUnlock();
+  }
+  function armUnlock() {
+    if (armed) return;
+    armed = true;
+    unlockEvents.forEach(function (t) { document.addEventListener(t, unlockMusic, true); });
+  }
+
   musicBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     if (bgm.paused) {
+      userPaused = false;
+      bgm.muted = false;
       var pr = bgm.play();
       if (pr && pr.catch) pr.catch(function () {});
-      musicBtn.classList.add("on");
     } else {
+      userPaused = true;
+      disarmUnlock();
       bgm.pause();
-      musicBtn.classList.remove("on");
     }
   });
+
+  /* 进入页面即起播：muted + autoplay 保证播放能启动，
+     随后尝试恢复声音；若被浏览器拦截，首次交互时立即出声 */
+  (function autoStartMusic() {
+    armUnlock();
+    bgm.muted = false;
+    var p = bgm.play();
+    if (p && p.then) {
+      p.then(function () {
+        syncMusicBtn();
+      }).catch(function () {
+        bgm.muted = true;
+        var p2 = bgm.play();
+        if (p2 && p2.catch) p2.catch(function () {});
+      });
+    }
+  })();
 
   /* ---------------- 跑马灯无缝循环 ---------------- */
   Array.prototype.forEach.call(document.querySelectorAll(".marquee .track"), function (t) {
